@@ -1,0 +1,773 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    width: 100%;
+    background:rgb(241, 241, 167);
+}
+
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 10px;
+    background: yellow;
+}
+
+
+.navbar {
+    display: flex;
+    padding: 22px 0;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+
+.navbar .hamburger-btn {
+    display: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+
+.navbar .logo {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+.navbar .logo img {
+    width: 300px;
+    border-radius: 0%;
+    margin:0px 0px 0px -30%;
+}
+
+
+
+.navbar .can h2 {
+    color: rgb(255, 3, 3);
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+
+.navbar .can h3{
+    color: rgb(8, 164, 8);
+    font-weight: 600;
+}
+
+
+
+.navbar .can p1 {
+    font-weight: 600;
+}
+
+
+
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+
+#ros {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+
+.const .links {
+    cursor: pointer;
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    align-items: center;
+    margin: 130px 0px 0px 0px;
+    padding: 30px 10px 10px  20px;
+    background: yellow;
+    justify-content: center;
+}
+
+
+.const .close-btn {
+    position: absolute;
+    right: 20px;
+    top: -180px;
+    display: none;
+    color: #000;
+    cursor: pointer;
+}
+
+
+
+.const .links a {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.1s ease;
+    
+}
+
+
+.const .links a:hover {
+    color: rgb(0, 183, 255);
+}
+
+
+.const .login-btn {
+    border: none;
+    outline: none;
+    background: yellow;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 20px;
+    border-color: #000;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+
+
+.const .login-btn:hover {
+    color: rgb(0, 183, 255);
+}
+
+
+
+.form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    max-width: 720px;
+    background: rgb(236, 236, 58);
+    border: 2px solid #fff;
+    transform: translate(-50%, -70%);
+}
+
+
+
+.show-popup .form-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+
+
+.form-popup .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #878484;
+    cursor: pointer;
+}
+
+
+
+.blur-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+
+
+
+.show-popup .blur-bg-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.form-popup .form-box {
+    display: flex;
+}
+
+
+
+.form-box .form-details {
+    width: 100%;
+    color: #fff;
+    max-width: 330px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.login .form-details {
+    padding: 0 40px;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.signup .form-details {
+    padding: 0 20px;
+
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.form-box .form-content {
+    width: 100%;
+    padding: 35px;
+}
+
+
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 29px;
+}
+
+
+
+form .input-field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+
+.input-field input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 0 15px;
+    border: 1px solid #717171;
+    border-radius: 3px;
+}
+
+
+
+.input-field input:focus {
+    border: 1px solid #00bcd4;
+}
+
+
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #4a4646;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+
+.input-field input:is(:focus, :valid) {
+    padding: 16px 15px 0;
+}
+
+
+.input-field input:is(:focus, :valid)~label {
+    transform: translateY(-120%);
+    color: #00bcd4;
+    font-size: 0.75rem;
+}
+
+
+
+.form-box a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+
+
+.form-box a:hover {
+    text-decoration: underline;
+}
+
+
+form :where(.forgot-pass-link, .policy-text) {
+    display: inline-flex;
+    margin-top: 13px;
+    font-size: 0.95rem;
+}
+
+
+
+form button {
+    width: 100%;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 25px 0;
+    background: #00bcd4;
+    transition: 0.2s ease;
+}
+
+
+
+form button:hover {
+    background: #0097a7;
+}
+
+
+
+.form-content .bottom-link {
+    text-align: center;
+}
+
+
+.form-popup .signup,
+.form-popup.show-signup .login {
+    display: none;
+}
+
+
+
+.form-popup.show-signup .signup {
+    display: flex;
+}
+
+
+
+.signup .policy-text {
+    display: flex;
+    margin-top: 14px;
+    align-items: center;
+}
+
+
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+
+
+.slider-container {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    padding: 10% 0px 0px 0px;
+  }
+  
+  .slider {
+    display: flex;
+    justify-content: space-between;
+    transition: transform 2s ease-in-out;
+  }
+  
+  .slide {
+    width: 100%;
+    height: auto;
+  }
+
+  
+
+.Conditions{
+    margin: 100px 50px;
+    text-align: justify;
+}
+
+.Conditions b {
+    padding: 20px 0px;
+}
+
+
+
+
+.Conditions p1 {
+    padding:40% 20px ;
+    font-weight: 500;
+}
+
+
+#loginMessage {
+    color: red;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 300px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.input-field label1 {
+    position: absolute;
+    top: 30%;
+    left: 25px;
+    transform: translateY(-50%);
+    color: #4a4646;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+
+
+.input-field input:is(:focus, :valid) {
+    padding: 16px 15px 0;
+}
+
+
+.input-field input:is(:focus, :valid)~label1 {
+    transform: translateY(-120%);
+    color: #00bcd4;
+    font-size: 0.75rem;
+}
+
+.form-box a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+
+
+.form-box a:hover {
+    text-decoration: underline;
+}
+
+
+
+.input-field label2 {
+    position: absolute;
+    top: 42%;
+    left: 25px;
+    transform: translateY(-50%);
+    color: #4a4646;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+
+
+.input-field input:is(:focus, :valid) {
+    padding: 16px 15px 0;
+}
+
+
+.input-field input:is(:focus, :valid)~label2 {
+    transform: translateY(-120%);
+    color: #00bcd4;
+    font-size: 0.75rem;
+}
+
+.form-box a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+
+
+.form-box a:hover {
+    text-decoration: underline;
+}
+
+
+.rin button {
+    width: 100%;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 25px 0;
+    background: #00bcd4;
+    transition: 0.2s ease;
+    border-radius: 20px;
+}
+
+.rin button:hover {
+    background: #0097a7;
+}
+
+.come {
+    margin: 50px 20px 20px 40% ;
+}
+.come a {
+    text-decoration: none;
+    color: #000;
+    font-size: x-large;
+}
+
+.come a:hover {
+    color: #00bcd4;
+}
+
+
+
+
+.bommer{
+    background-color: #00bcd4;
+    margin-top: 30px;
+    display: flex;
+    padding-bottom: 40px;
+
+}
+.bommer .abi{
+    justify-content: space-between;
+}
+
+
+.bommer .abi h2{
+    font-size: xx-large;
+    padding: 10px 20px 10px 20px;
+    margin: 0px 40px;
+    color: rgb(206, 58, 58);
+}
+
+.bommer .abi a{
+    padding: 10px 20px;
+    font-size: large;
+    text-decoration: none;
+    color: #000;
+    margin: 0px 40px;
+}
+
+
+@media (max-width: 950px) {
+    .const :is(.hamburger-btn, .close-btn) {
+        display: block;
+        margin: 200px 0px 0px 10px;
+        cursor: pointer;
+    }
+    .navbar{
+        padding: 15px 0;
+        font-size: xx-small;
+    }
+    .navbar .logo img {
+        width: 120px;
+        margin: -10% 0px 0px 0%;
+    }
+    .const .logo h2 {
+        font-size: 1.1rem;
+        margin: 0%;
+    }
+    .const .links {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        left: -100%;
+        display: block;
+        height: 100vh;
+        width: 100%;
+        padding-top: 60px;
+        text-align: center;
+        background: yellow;
+        transition: 0.2s ease;
+    }
+    .const .links.show-menu {
+        left: 0;
+    }
+    .const .links a {
+        display: inline-flex;
+        margin: 20px 0;
+        font-size: 1.2rem;
+        color: #000;
+    }
+    .const .links a:hover {
+        color: #00BCD4;
+    }
+    .const .login-btn {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 7px 10px;
+        margin: 10px;
+    }
+    .come {
+        margin: 20px 20px 20px 30%;
+    }
+
+
+    .bommer{
+    
+        background-color: #00bcd4;
+        display:flow-root;
+        padding-bottom: 40px;
+    
+    }
+    .bommer .abi{
+        justify-content: space-between;
+    }
+    
+    
+    .bommer .abi h2{
+        font-size: x-large;
+        padding: 10px 1px 10px 1px;
+        color: rgb(206, 58, 58);
+    }
+    
+    .bommer .abi a{
+        padding: 10px;
+        font-size: large;
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .const :is(.hamburger-btn, .close-btn) {
+        display: block;
+        margin: 280px 0px 0px 10px;
+        cursor: pointer;
+        
+    }
+
+    .navbar{
+        font-size: xx-small;
+    }
+    .navbar .logo img {
+        width: 120px;
+        margin: -130% 0px 0px 70%;
+    }
+
+    .navbar .can {
+        padding: 60px 0px 0px 0px;
+        margin: 0px 0px 0px -40%;
+    }
+
+
+    .form-popup {
+        width: 95%;
+    }
+    .form-box .form-details {
+        display: none;
+    }
+    .form-box .form-content {
+        padding: 30px 20px;
+    }
+    
+    .Conditions {
+        font-size: small;
+    }
+    .navbar .logo h2 {
+        font-size: 0.7rem;
+        font-weight: 500;
+    
+    }
+
+    .come {
+        margin: 20px 20px 20px 30%;
+        
+    }
+
+    .come a {
+        font-size: medium;
+    }
+
+
+
+    .bommer{
+        background-color: #00bcd4;
+        margin-top: 0px;
+        display:flow-root;
+        padding-bottom: 40px;
+        align-items: center;
+    
+    }
+    .bommer .abi{
+        justify-content: space-between;
+    }
+    
+    
+    .bommer .abi h2{
+        font-size: large;
+        padding: 10px 5px 10px 5px;
+        color: rgb(206, 58, 58);
+        align-items: center;
+    }
+    
+    .bommer .abi a{
+        padding: 1px;
+        font-size: medium;
+        text-decoration: none;
+        color: #000;
+    }
+    
+}
